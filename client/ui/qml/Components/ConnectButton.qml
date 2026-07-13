@@ -42,8 +42,8 @@ Button {
         FocusController.nextKeyRightItem()
     }
         
-    implicitWidth: 190
-    implicitHeight: 190
+    implicitWidth: 285
+    implicitHeight: 285
 
     text: ConnectionController.connectionStateText
 
@@ -90,8 +90,8 @@ Button {
                 PathAngleArc {
                     centerX: backgroundCircle.width / 2
                     centerY: backgroundCircle.height / 2
-                    radiusX: 94
-                    radiusY: 94
+                    radiusX: 141
+                    radiusY: 141
                     startAngle: 0
                     sweepAngle: 360
                 }
@@ -114,8 +114,8 @@ Button {
                 PathAngleArc {
                     centerX: backgroundCircle.width / 2
                     centerY: backgroundCircle.height / 2
-                    radiusX: 93 - (root.buttonActiveFocus ? 2 : 0)
-                    radiusY: 93 - (root.buttonActiveFocus ? 2 : 0)
+                    radiusX: 140 - (root.buttonActiveFocus ? 2 : 0)
+                    radiusY: 140 - (root.buttonActiveFocus ? 2 : 0)
                     startAngle: 0
                     sweepAngle: 360
                 }
@@ -149,8 +149,8 @@ Button {
                 PathAngleArc {
                     centerX: shape.width / 2
                     centerY: shape.height / 2
-                    radiusX: 93
-                    radiusY: 93
+                    radiusX: 140
+                    radiusY: 140
                     startAngle: 245
                     sweepAngle: -180
                 }
