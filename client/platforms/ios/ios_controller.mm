@@ -592,7 +592,7 @@ bool IosController::setupWireGuard()
     if (config.contains(configKey::persistentKeepAlive)) {
         wgConfig.insert(configKey::persistentKeepAlive, config[configKey::persistentKeepAlive]);
     } else {
-        wgConfig.insert(configKey::persistentKeepAlive, "25");
+        wgConfig.insert(configKey::persistentKeepAlive, "60");
     }
 
     if (config.contains(configKey::isObfuscationEnabled) && config.value(configKey::isObfuscationEnabled).toBool()) {
@@ -698,7 +698,7 @@ bool IosController::setupAwg()
     if (config.contains(configKey::persistentKeepAlive)) {
         wgConfig.insert(configKey::persistentKeepAlive, config[configKey::persistentKeepAlive]);
     } else {
-        wgConfig.insert(configKey::persistentKeepAlive, "25");
+        wgConfig.insert(configKey::persistentKeepAlive, "60");
     }
 
     wgConfig.insert(configKey::initPacketMagicHeader, config[configKey::initPacketMagicHeader]);

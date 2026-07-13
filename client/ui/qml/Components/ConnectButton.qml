@@ -72,15 +72,13 @@ Button {
             
             SequentialAnimation on scale {
                 loops: Animation.Infinite
-                running: !ConnectionController.isConnectionInProgress
-                NumberAnimation { from: 1.0; to: 1.25; duration: 2500; easing.type: Easing.InOutSine }
-                NumberAnimation { from: 1.25; to: 1.0; duration: 2500; easing.type: Easing.InOutSine }
+                running: !ConnectionController.isConnectionInProgress && Qt.application.state === Qt.ApplicationActive
+                NumberAnimation { from: 1.0; to: 1.5; duration: 2500; easing.type: Easing.OutSine }
             }
             SequentialAnimation on opacity {
                 loops: Animation.Infinite
-                running: !ConnectionController.isConnectionInProgress
-                NumberAnimation { from: 0.6; to: 0.0; duration: 2500; easing.type: Easing.InOutSine }
-                NumberAnimation { from: 0.0; to: 0.6; duration: 2500; easing.type: Easing.InOutSine }
+                running: !ConnectionController.isConnectionInProgress && Qt.application.state === Qt.ApplicationActive
+                NumberAnimation { from: 0.6; to: 0.0; duration: 2500; easing.type: Easing.OutSine }
             }
             visible: !ConnectionController.isConnectionInProgress
         }

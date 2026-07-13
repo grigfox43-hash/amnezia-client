@@ -73,7 +73,7 @@ private const val PREFS_CONFIG_KEY = "LAST_CONF"
 private const val PREFS_SERVER_NAME = "LAST_SERVER_NAME"
 private const val PREFS_SERVER_INDEX = "LAST_SERVER_INDEX"
 // private const val STATISTICS_SENDING_TIMEOUT = 1000L
-private const val TRAFFIC_STATS_UPDATE_TIMEOUT = 1000L
+private const val TRAFFIC_STATS_UPDATE_TIMEOUT = 3000L
 private const val DISCONNECT_TIMEOUT = 5000L
 private const val STOP_SERVICE_TIMEOUT = 5000L
 

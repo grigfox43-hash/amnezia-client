@@ -325,8 +325,8 @@ PageType {
 
         topPadding: 8
         bottomPadding: 8 + PageController.safeAreaBottomMargin
-        leftPadding: 96
-        rightPadding: 96
+        leftPadding: 48
+        rightPadding: 48
 
         height: visible ? homeTabButton.implicitHeight + tabBar.topPadding + tabBar.bottomPadding : 0
 

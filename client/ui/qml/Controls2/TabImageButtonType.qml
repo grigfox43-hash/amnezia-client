@@ -49,6 +49,8 @@ TabButton {
 
     icon.source: image
     icon.color: isSelected ? selectedColor : defaultColor
+    icon.width: 48
+    icon.height: 48
 
     background: Rectangle {
         id: background
@@ -56,8 +58,7 @@ TabButton {
         color: AmneziaStyle.color.transparent
         radius: 10
 
-        border.color: root.activeFocus ? root.borderFocusedColor : AmneziaStyle.color.transparent
-        border.width: root.activeFocus ? root.borderFocusedWidth : 0
+        border.width: 0
 
     }
 
