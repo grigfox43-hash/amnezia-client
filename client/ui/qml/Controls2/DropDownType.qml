@@ -30,12 +30,12 @@ Item {
     property string rootButtonBackgroundHoveredColor: AmneziaStyle.color.onyxBlack
     property string rootButtonBackgroundPressedColor: AmneziaStyle.color.onyxBlack
 
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
+    property string borderFocusedColor: AmneziaStyle.color.goldenApricot
     property int borderFocusedWidth: 1
 
-    property string rootButtonHoveredBorderColor: AmneziaStyle.color.charcoalGray
-    property string rootButtonDefaultBorderColor: AmneziaStyle.color.slateGray
-    property string rootButtonPressedBorderColor: AmneziaStyle.color.paleGray
+    property string rootButtonHoveredBorderColor: AmneziaStyle.color.goldenApricot
+    property string rootButtonDefaultBorderColor: AmneziaStyle.color.goldenApricot
+    property string rootButtonPressedBorderColor: AmneziaStyle.color.goldenApricot
 
     property int rootButtonTextLeftMargins: 16
     property int rootButtonTextTopMargin: 16

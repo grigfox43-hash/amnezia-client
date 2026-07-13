@@ -11,9 +11,9 @@ Rectangle {
     property alias textArea: textArea
     property alias textAreaText: textArea.text
 
-    property string borderHoveredColor: AmneziaStyle.color.charcoalGray
-    property string borderNormalColor: AmneziaStyle.color.slateGray
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
+    property string borderHoveredColor: AmneziaStyle.color.goldenApricot
+    property string borderNormalColor: AmneziaStyle.color.goldenApricot
+    property string borderFocusedColor: AmneziaStyle.color.goldenApricot
 
     height: 148
     color: AmneziaStyle.color.onyxBlack

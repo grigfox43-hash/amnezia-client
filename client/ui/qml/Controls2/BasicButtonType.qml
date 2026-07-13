@@ -17,9 +17,9 @@ Button {
 
     property string textColor: AmneziaStyle.color.midnightBlack
 
-    property string borderColor: AmneziaStyle.color.paleGray
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
-    property int borderWidth: 0
+    property string borderColor: AmneziaStyle.color.goldenApricot
+    property string borderFocusedColor: AmneziaStyle.color.goldenApricot
+    property int borderWidth: 1
     property int borderFocusedWidth: 1
 
     property string leftImageSource
