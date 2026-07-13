@@ -6,9 +6,9 @@ import Style 1.0
 TabButton {
     id: root
 
-    property string hoveredColor: AmneziaStyle.color.richBrown
+    property string hoveredColor: AmneziaStyle.color.primaryGreen
     property string defaultColor: AmneziaStyle.color.paleGray
-    property string selectedColor: AmneziaStyle.color.goldenApricot
+    property string selectedColor: AmneziaStyle.color.primaryGreen
 
     property string image
 

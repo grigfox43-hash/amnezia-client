@@ -65,9 +65,12 @@ Button {
             height: 280
             radius: width / 2
             anchors.centerIn: parent
-            color: "transparent"
-            border.width: 15
-            border.color: ConnectionController.isConnected ? root.connectedButtonColor : root.defaultButtonColor
+            border.width: 0
+            
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: ConnectionController.isConnected ? root.connectedButtonColor : root.defaultButtonColor }
+                GradientStop { position: 1.0; color: "transparent" }
+            }
             opacity: 0.5
             
             SequentialAnimation on scale {

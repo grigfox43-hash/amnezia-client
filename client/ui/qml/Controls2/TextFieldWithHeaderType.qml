@@ -28,8 +28,8 @@ Item {
 
     property bool textFieldEditable: true
 
-    property string borderColor: AmneziaStyle.color.slateGray
-    property string borderFocusedColor: AmneziaStyle.color.paleGray
+    property string borderColor: AmneziaStyle.color.primaryGreen
+    property string borderFocusedColor: AmneziaStyle.color.primaryGreen
 
     property string backgroundColor: AmneziaStyle.color.onyxBlack
     property string backgroundDisabledColor: AmneziaStyle.color.transparent

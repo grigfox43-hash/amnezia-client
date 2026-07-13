@@ -8,6 +8,11 @@ set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Autogen")
 set_property(GLOBAL PROPERTY AUTOMOC_TARGETS_FOLDER "Autogen")
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "Autogen")
 
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Deep optimization: Enable Link Time Optimization (LTO)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+
 set(PACKAGES
     Core Gui Network Xml
     RemoteObjects Quick Svg QuickControls2
