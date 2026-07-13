@@ -1,6 +1,8 @@
 #include <QDebug>
 #include <QTimer>
 #include <libssh/libssh.h>
+#include <QThreadPool>
+#include <QSurfaceFormat>
 
 #include "amneziaApplication.h"
 #include "core/utils/osSignalHandler.h"
@@ -42,9 +44,24 @@ int main(int argc, char *argv[])
     qputenv("QT_ANDROID_DISABLE_ACCESSIBILITY", "1");
     qputenv("ANDROID_OPENSSL_SUFFIX", "_3");
     qputenv("QSG_RHI_BACKEND", "vulkan");
+    
+    // Amnezia Optimization Pack
+    qputenv("GOGC", "300"); // 1. Tune Go Garbage Collector
+    qputenv("QSG_NO_DEPTH_BUFFER", "1"); // 2. Disable 3D Z-Buffer
 #endif
 
+    // 5. Render Loop Throttling
+    QSurfaceFormat format = QSurfaceFormat::defaultFormat();
+    format.setSwapInterval(2);
+    QSurfaceFormat::setDefaultFormat(format);
+
     AmneziaApplication app(argc, argv);
+    
+#ifdef Q_OS_ANDROID
+    // 3. Limit threads to efficiency cores for background tasks
+    QThreadPool::globalInstance()->setMaxThreadCount(2);
+#endif
+
     OsSignalHandler::setup();
 
     ssh_init();
