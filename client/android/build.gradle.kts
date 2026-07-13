@@ -55,6 +55,9 @@ android {
 
     buildTypes {
         release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             // exclude coroutine debug resource from release build
             packaging {
                 resources.excludes += "DebugProbesKt.bin"

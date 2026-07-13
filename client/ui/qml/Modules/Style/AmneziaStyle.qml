@@ -34,6 +34,6 @@ QtObject {
         readonly property color translucentSlateGray: Qt.rgba(85/255, 86/255, 92/255, 0.13)
         readonly property color translucentOnyxBlack: Qt.rgba(28/255, 29/255, 33/255, 0.13)
 
-        readonly property string goldenApricotString: '#4D4D4D'
+        readonly property string goldenApricotString: '#1c1c1c'
     }
 }

@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
     // QTBUG-95974 QTBUG-95764 QTBUG-102168
     qputenv("QT_ANDROID_DISABLE_ACCESSIBILITY", "1");
     qputenv("ANDROID_OPENSSL_SUFFIX", "_3");
+    qputenv("QSG_RHI_BACKEND", "vulkan");
 #endif
 
     AmneziaApplication app(argc, argv);

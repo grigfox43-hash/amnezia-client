@@ -51,6 +51,8 @@ if(WIN32 OR (APPLE AND NOT IOS) OR (LINUX AND NOT ANDROID))
     set(LIBS ${LIBS} Qt6::Widgets)
 endif()
 
+set(QT_ENABLE_QML_COMPILER ON)
+set(QT_QML_ALWAYS_CACHED_DIR TRUE)
 qt_standard_project_setup()
 qt_add_executable(${PROJECT} MANUAL_FINALIZATION)
 target_include_directories(${PROJECT} PUBLIC

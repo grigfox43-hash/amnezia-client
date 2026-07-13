@@ -43,6 +43,8 @@ PageType {
             Image {
                 id: image
                 source: "qrc:/images/amneziaBigLogo.png"
+                asynchronous: true
+                cache: true
 
                 Layout.alignment: Qt.AlignCenter
                 Layout.topMargin: 16
