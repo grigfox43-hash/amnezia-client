@@ -42,8 +42,8 @@ Button {
         FocusController.nextKeyRightItem()
     }
         
-    implicitWidth: 285
-    implicitHeight: 285
+    implicitWidth: 190
+    implicitHeight: 190
 
     text: ConnectionController.connectionStateText
 
@@ -77,21 +77,21 @@ Button {
                 verticalOffset: 0
                 radius: 10
                 samples: 25
-                color: (root.buttonActiveFocus && !ConnectionController.isConnected) ? AmneziaStyle.color.paleGray : AmneziaStyle.color.goldenApricot
+                color: root.buttonActiveFocus ? AmneziaStyle.color.paleGray : AmneziaStyle.color.goldenApricot
                 source: backgroundCircle
             }
 
             ShapePath {
                 fillColor: AmneziaStyle.color.transparent
                 strokeColor: AmneziaStyle.color.paleGray
-                strokeWidth: (root.buttonActiveFocus && !ConnectionController.isConnected) ? 1 : 0
+                strokeWidth: root.buttonActiveFocus ? 1 : 0
                 capStyle: ShapePath.RoundCap
 
                 PathAngleArc {
                     centerX: backgroundCircle.width / 2
                     centerY: backgroundCircle.height / 2
-                    radiusX: 141
-                    radiusY: 141
+                    radiusX: 94
+                    radiusY: 94
                     startAngle: 0
                     sweepAngle: 360
                 }
@@ -114,8 +114,8 @@ Button {
                 PathAngleArc {
                     centerX: backgroundCircle.width / 2
                     centerY: backgroundCircle.height / 2
-                    radiusX: 140 - (root.buttonActiveFocus ? 2 : 0)
-                    radiusY: 140 - (root.buttonActiveFocus ? 2 : 0)
+                    radiusX: 93 - (root.buttonActiveFocus ? 2 : 0)
+                    radiusY: 93 - (root.buttonActiveFocus ? 2 : 0)
                     startAngle: 0
                     sweepAngle: 360
                 }
@@ -149,8 +149,8 @@ Button {
                 PathAngleArc {
                     centerX: shape.width / 2
                     centerY: shape.height / 2
-                    radiusX: 140
-                    radiusY: 140
+                    radiusX: 93
+                    radiusY: 93
                     startAngle: 245
                     sweepAngle: -180
                 }
