@@ -72,12 +72,14 @@ Button {
             
             SequentialAnimation on scale {
                 loops: Animation.Infinite
-                running: !ConnectionController.isConnectionInProgress && Qt.application.state === Qt.ApplicationActive
+                running: !ConnectionController.isConnectionInProgress
+                paused: Qt.application.state !== Qt.ApplicationActive
                 NumberAnimation { from: 1.0; to: 1.5; duration: 2500; easing.type: Easing.OutSine }
             }
             SequentialAnimation on opacity {
                 loops: Animation.Infinite
-                running: !ConnectionController.isConnectionInProgress && Qt.application.state === Qt.ApplicationActive
+                running: !ConnectionController.isConnectionInProgress
+                paused: Qt.application.state !== Qt.ApplicationActive
                 NumberAnimation { from: 0.6; to: 0.0; duration: 2500; easing.type: Easing.OutSine }
             }
             visible: !ConnectionController.isConnectionInProgress
@@ -96,7 +98,7 @@ Button {
             ShapePath {
                 fillColor: {
                     if (ConnectionController.isConnectionInProgress) {
-                        return AmneziaStyle.color.darkCharcoal
+                        return AmneziaStyle.color.goldenApricotString // dark #1c1c1c
                     } else if (ConnectionController.isConnected) {
                         return root.connectedButtonColor
                     } else {
@@ -154,6 +156,7 @@ Button {
             RotationAnimator {
                 target: shape
                 running: ConnectionController.isConnectionInProgress
+                paused: Qt.application.state !== Qt.ApplicationActive
                 from: 0
                 to: 360
                 loops: Animation.Infinite
@@ -177,7 +180,7 @@ Button {
         ColorOverlay {
             anchors.fill: powerIcon
             source: powerIcon
-            color: "#333333"
+            color: "#1c1c1c"
         }
     }
 

@@ -87,4 +87,5 @@ dependencies {
     implementation(libs.google.mlkit)
     implementation(libs.androidx.datastore)
     implementation(libs.androidx.biometric)
+    implementation("androidx.profileinstaller:profileinstaller:1.3.1")
 }

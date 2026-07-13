@@ -1,0 +1,9 @@
+HPLorg/amnezia/vpn/AmneziaVpnService;
+HPLorg/amnezia/vpn/VpnProto;
+HPLorg/amnezia/vpn/protocol/**;
+HPLorg/amnezia/vpn/util/**;
+HPLorg/amnezia/vpn/VpnStateStore;
+HPLorg/amnezia/vpn/ServiceEvent;
+HPLorg/amnezia/vpn/IpcMessenger;
+HPLorg/amnezia/vpn/Action;
+HPLorg/amnezia/vpn/ServiceNotification;

@@ -59,6 +59,7 @@ Popup {
                 RotationAnimator {
                     target: shape
                     running: busyIndicator.visible && busyIndicator.running
+                    paused: Qt.application.state !== Qt.ApplicationActive
                     from: 0
                     to: 360
                     loops: Animation.Infinite
