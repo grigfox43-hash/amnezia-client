@@ -66,6 +66,7 @@
         <file>controls/text-cursor.svg</file>
         <file>controls/trash.svg</file>
         <file>controls/x-circle.svg</file>
+        <file>controls/power.svg</file>
         <file>tray/active.png</file>
         <file>tray/default.png</file>
         <file>tray/error.png</file>

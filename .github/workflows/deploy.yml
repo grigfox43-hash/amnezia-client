@@ -847,14 +847,18 @@ jobs:
         KEYSTORE_BASE64: ${{ secrets.ANDROID_RELEASE_KEYSTORE_BASE64 }}
       shell: bash
       run: |
-        echo $KEYSTORE_BASE64 | base64 --decode > android.keystore
+        if [ -z "$KEYSTORE_BASE64" ]; then
+          keytool -genkey -v -keystore android.keystore -alias dummy -storepass dummypass -keypass dummypass -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Dummy,O=Dummy,C=US"
+        else
+          echo $KEYSTORE_BASE64 | base64 --decode > android.keystore
+        fi
 
     - name: 'Build project'
       env:
         QT_INSTALL_DIR: ${{ runner.temp }}
         QT_ANDROID_KEYSTORE_PATH: ${{ github.workspace }}/android.keystore
-        QT_ANDROID_KEYSTORE_ALIAS: ${{ secrets.ANDROID_RELEASE_KEYSTORE_KEY_ALIAS }}
-        QT_ANDROID_KEYSTORE_STORE_PASS: ${{ secrets.ANDROID_RELEASE_KEYSTORE_KEY_PASS }}
+        QT_ANDROID_KEYSTORE_ALIAS: ${{ secrets.ANDROID_RELEASE_KEYSTORE_KEY_ALIAS || 'dummy' }}
+        QT_ANDROID_KEYSTORE_STORE_PASS: ${{ secrets.ANDROID_RELEASE_KEYSTORE_KEY_PASS || 'dummypass' }}
       shell: bash
       run: |
         deploy/build.sh -t android --sign --aab
