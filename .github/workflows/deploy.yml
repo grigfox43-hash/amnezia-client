@@ -857,6 +857,7 @@ jobs:
         QT_ANDROID_KEYSTORE_STORE_PASS: android
       shell: bash
       run: |
+        rm -f android.keystore
         keytool -genkey -v -keystore android.keystore -alias amnezia -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Amnezia,O=Amnezia,C=US" -storepass android -keypass android
         deploy/build.sh -t android
 

@@ -67,9 +67,17 @@ Button {
             anchors.centerIn: parent
             border.width: 0
             
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: ConnectionController.isConnected ? root.connectedButtonColor : root.defaultButtonColor }
-                GradientStop { position: 1.0; color: "transparent" }
+            color: "transparent"
+            
+            RadialGradient {
+                anchors.fill: parent
+                horizontalRadius: parent.width / 2
+                verticalRadius: parent.height / 2
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "transparent" }
+                    GradientStop { position: 0.99; color: ConnectionController.isConnected ? root.connectedButtonColor : root.defaultButtonColor }
+                    GradientStop { position: 1.0; color: "transparent" }
+                }
             }
             opacity: 0.5
             
