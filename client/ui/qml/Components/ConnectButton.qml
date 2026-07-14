@@ -59,27 +59,37 @@ Button {
         transformOrigin: Item.Center
 
         // Pulsing ring behind the button
-        Rectangle {
+        Item {
             id: pulseRing
             width: 280
             height: 280
-            radius: width / 2
             anchors.centerIn: parent
-            border.width: 0
-            
-            color: "transparent"
-            
+            opacity: 0.5
+
+            Rectangle {
+                id: maskRect
+                anchors.fill: parent
+                radius: width / 2
+                visible: false
+            }
+
             RadialGradient {
+                id: gradientRect
                 anchors.fill: parent
                 horizontalRadius: parent.width / 2
                 verticalRadius: parent.height / 2
                 gradient: Gradient {
                     GradientStop { position: 0.0; color: "transparent" }
-                    GradientStop { position: 0.99; color: ConnectionController.isConnected ? root.connectedButtonColor : root.defaultButtonColor }
-                    GradientStop { position: 1.0; color: "transparent" }
+                    GradientStop { position: 1.0; color: ConnectionController.isConnected ? root.connectedButtonColor : root.defaultButtonColor }
                 }
+                visible: false
             }
-            opacity: 0.5
+
+            OpacityMask {
+                anchors.fill: parent
+                source: gradientRect
+                maskSource: maskRect
+            }
             
             SequentialAnimation on scale {
                 loops: Animation.Infinite
