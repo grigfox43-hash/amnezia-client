@@ -10,7 +10,7 @@ ProgressBar {
     implicitHeight: 4
 
     background: Rectangle {
-        color: AmneziaStyle.color.richBrown
+        color: "#333333"
     }
 
     contentItem: Item {

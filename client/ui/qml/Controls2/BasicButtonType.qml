@@ -10,17 +10,17 @@ import "TextTypes"
 Button {
     id: root
 
-    property string hoveredColor: AmneziaStyle.color.lightGray
-    property string defaultColor: AmneziaStyle.color.paleGray
+    property string hoveredColor: Qt.darker(AmneziaStyle.color.richBrown, 1.1)
+    property string defaultColor: AmneziaStyle.color.richBrown
     property string disabledColor: AmneziaStyle.color.charcoalGray
-    property string pressedColor: AmneziaStyle.color.mutedGray
+    property string pressedColor: Qt.darker(AmneziaStyle.color.richBrown, 1.2)
 
-    property string textColor: AmneziaStyle.color.midnightBlack
+    property string textColor: "#111111"
 
-    property string borderColor: AmneziaStyle.color.goldenApricot
-    property string borderFocusedColor: AmneziaStyle.color.goldenApricot
-    property int borderWidth: 1
-    property int borderFocusedWidth: 1
+    property string borderColor: AmneziaStyle.color.transparent
+    property string borderFocusedColor: AmneziaStyle.color.transparent
+    property int borderWidth: 0
+    property int borderFocusedWidth: 0
 
     property string leftImageSource
     property string rightImageSource

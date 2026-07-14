@@ -49,8 +49,8 @@ TabButton {
 
     icon.source: image
     icon.color: isSelected ? selectedColor : defaultColor
-    icon.width: Qt.platform.os === "windows" ? 21 : 24
-    icon.height: Qt.platform.os === "windows" ? 21 : 24
+    icon.width: Qt.platform.os === "windows" ? 21 : (Qt.platform.os === "android" ? 31 : 24)
+    icon.height: Qt.platform.os === "windows" ? 21 : (Qt.platform.os === "android" ? 31 : 24)
 
     background: Rectangle {
         id: background
