@@ -721,7 +721,7 @@ jobs:
           "-DCMAKE_ANDROID_NDK=$CMAKE_ANDROID_NDK"
         )
 
-        for abi in arm64-v8a armeabi-v7a x86 x86_64; do
+        for abi in arm64-v8a armeabi-v7a; do
           for build_type in Release Debug; do
             cmake -S . -B build_${abi//-/_} "${args[@]}" "-DCMAKE_ANDROID_ARCH_ABI=$abi" "-DCMAKE_BUILD_TYPE=$build_type"
           done
@@ -865,7 +865,7 @@ jobs:
 
         (cd deploy/build/client/android-build && mv AmneziaVPN.apk AmneziaVPN_${VERSION}_android9+_universal.apk)
 
-        for abi in arm64-v8a armeabi-v7a x86 x86_64; do
+        for abi in arm64-v8a armeabi-v7a; do
           deploy/build.sh -t android --abi ${abi} --build ./deploy/build/${abi} --sign
           (cd deploy/build/${abi}/client/android-build && mv AmneziaVPN.apk AmneziaVPN_${VERSION}_android9+_${abi}.apk)
         done
