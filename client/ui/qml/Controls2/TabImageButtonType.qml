@@ -58,8 +58,8 @@ TabButton {
         color: AmneziaStyle.color.transparent
         radius: 10
 
-        border.color: root.activeFocus ? root.borderFocusedColor : AmneziaStyle.color.transparent
-        border.width: root.activeFocus ? root.borderFocusedWidth : 0
+        border.color: AmneziaStyle.color.transparent
+        border.width: 0
 
     }
 

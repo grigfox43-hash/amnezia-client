@@ -108,8 +108,8 @@ Button {
                         return root.defaultButtonColor
                     }
                 }
-                strokeColor: root.buttonActiveFocus ? AmneziaStyle.color.paleGray : "transparent"
-                strokeWidth: root.buttonActiveFocus ? 2 : 0
+                strokeColor: "transparent"
+                strokeWidth: 0
                 capStyle: ShapePath.RoundCap
 
                 PathAngleArc {
@@ -183,7 +183,7 @@ Button {
         ColorOverlay {
             anchors.fill: powerIcon
             source: powerIcon
-            color: "#1c1c1c"
+            color: "#111111"
         }
     }
 
