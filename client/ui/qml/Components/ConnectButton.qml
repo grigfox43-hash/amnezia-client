@@ -76,13 +76,11 @@ Button {
             SequentialAnimation on scale {
                 loops: Animation.Infinite
                 running: !ConnectionController.isConnectionInProgress
-                paused: Qt.application.state !== Qt.ApplicationActive
                 NumberAnimation { from: 1.0; to: 1.5; duration: 2500; easing.type: Easing.OutSine }
             }
             SequentialAnimation on opacity {
                 loops: Animation.Infinite
                 running: !ConnectionController.isConnectionInProgress
-                paused: Qt.application.state !== Qt.ApplicationActive
                 NumberAnimation { from: 0.6; to: 0.0; duration: 2500; easing.type: Easing.OutSine }
             }
             visible: !ConnectionController.isConnectionInProgress
@@ -159,7 +157,6 @@ Button {
             RotationAnimator {
                 target: shape
                 running: ConnectionController.isConnectionInProgress
-                paused: Qt.application.state !== Qt.ApplicationActive
                 from: 0
                 to: 360
                 loops: Animation.Infinite

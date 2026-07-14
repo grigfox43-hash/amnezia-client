@@ -17,7 +17,7 @@ Switch {
     property string textDisabledColor: AmneziaStyle.color.mutedGray
 
     property string checkedIndicatorColor: AmneziaStyle.color.richBrown
-    property string defaultIndicatorColor: "#111111"
+    property string defaultIndicatorColor: "#333333"
     property string checkedDisabledIndicatorColor: AmneziaStyle.color.deepBrown
 
     property string borderFocusedColor: AmneziaStyle.color.paleGray
@@ -28,7 +28,7 @@ Switch {
     property string checkedDisabledIndicatorBorderColor: AmneziaStyle.color.deepBrown
 
     property string checkedInnerCircleColor: "#111111"
-    property string defaultInnerCircleColor: "#333333"
+    property string defaultInnerCircleColor: AmneziaStyle.color.paleGray
     property string checkedDisabledInnerCircleColor: AmneziaStyle.color.mutedBrown
     property string defaultDisabledInnerCircleColor: AmneziaStyle.color.charcoalGray
 
