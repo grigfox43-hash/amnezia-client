@@ -20,16 +20,28 @@ namespace amnezia
 namespace
 {
     template <typename T>
-    QString awgVersionOf(const T &config)
+    bool hasAwg3Markers(const T &config)
     {
         auto hasValue = [](const QString &value) { return !value.trimmed().isEmpty(); };
 
         const QStringList awg3Params = { config.headerProtectionKey, config.contentPaddingAddition,
                                          config.rekeyAfterTime,      config.rekeyTimeout,
                                          config.rejectAfterTime,     config.keepaliveTimeout,
-                                         config.maxHandshakeAttempts, config.randomTrailers,
-                                         config.disableCookies };
+                                         config.maxHandshakeAttempts };
         if (std::any_of(awg3Params.begin(), awg3Params.end(), hasValue)) {
+            return true;
+        }
+
+        return AwgProtocolConfig::isToggleEnabled(config.randomTrailers)
+                || AwgProtocolConfig::isToggleEnabled(config.disableCookies);
+    }
+
+    template <typename T>
+    QString awgVersionOf(const T &config)
+    {
+        auto hasValue = [](const QString &value) { return !value.trimmed().isEmpty(); };
+
+        if (hasAwg3Markers(config)) {
             return protocols::awg::awgV3;
         }
 
@@ -412,6 +424,13 @@ QString AwgProtocolConfig::clientProtocolVersion() const
     return clientConfig.has_value() ? awgVersionOf(clientConfig.value()) : QString();
 }
 
+bool AwgProtocolConfig::isToggleEnabled(const QString &value)
+{
+    const QString trimmedValue = value.trimmed();
+    return !trimmedValue.isEmpty()
+            && trimmedValue.compare(QLatin1String(protocols::awg::awgBoolOff), Qt::CaseInsensitive) != 0;
+}
+
 QString AwgProtocolConfig::protocolVersionString(const QString &version)
 {
     if (version == protocols::awg::awgV3) return QObject::tr(" (version 3.1)");
@@ -464,9 +483,7 @@ bool AwgServerConfig::hasEqualServerSettings(const AwgServerConfig& other) const
 
 bool AwgServerConfig::hasAwg3Params() const
 {
-    return !headerProtectionKey.isEmpty() || !contentPaddingAddition.isEmpty() || !rekeyAfterTime.isEmpty()
-            || !rekeyTimeout.isEmpty() || !rejectAfterTime.isEmpty() || !keepaliveTimeout.isEmpty()
-            || !maxHandshakeAttempts.isEmpty() || !randomTrailers.isEmpty() || !disableCookies.isEmpty();
+    return hasAwg3Markers(*this);
 }
 
 bool AwgProtocolConfig::isHeadersEqual(const QString &h1, const QString &h2, const QString &h3, const QString &h4)
