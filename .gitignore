@@ -146,3 +146,10 @@ macos-with-sign-build.sh
 DeveloperIdApplicationCertificate.p12
 DeveloperIdInstallerCertificate.p12
 
+# Local agent tokens and logs
+.agents/token.json
+*.log
+runs.json
+jobs.json
+script.py
+
